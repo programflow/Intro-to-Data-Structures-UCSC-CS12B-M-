@@ -1,0 +1,205 @@
+Line 1 conatins 2 tokens: 
+ //
+ FileTokens.java
+Line 2 conatins 8 tokens: 
+ //
+ Illustrates
+ file
+ IO
+ and
+ tokenization
+ of
+ strings.
+Line 3 conatins 2 tokens: 
+ import
+ java.io.*;
+Line 4 conatins 2 tokens: 
+ import
+ java.util.Scanner;
+Line 5 conatins 2 tokens: 
+ class
+ FileTokens{
+Line 6 conatins 7 tokens: 
+ public
+ static
+ void
+ main(String[]
+ args)
+ throws
+ IOException{
+Line 7 conatins 4 tokens: 
+ Scanner
+ in
+ =
+ null;
+Line 8 conatins 4 tokens: 
+ PrintWriter
+ out
+ =
+ null;
+Line 9 conatins 3 tokens: 
+ String
+ line
+ =null;
+Line 10 conatins 4 tokens: 
+ String[]
+ token
+ =
+ null;
+Line 11 conatins 6 tokens: 
+ int
+ i,
+ n,
+ lineNumber
+ =
+ 0;
+Line 12 conatins 11 tokens: 
+ //
+ check
+ number
+ of
+ command
+ line
+ arguments
+ is
+ at
+ least
+ 2
+Line 13 conatins 3 tokens: 
+ if(args.length
+ <
+ 2){
+Line 14 conatins 6 tokens: 
+ System.out.println("Usage:
+ FileCopy
+ <input
+ file>
+ <output
+ file>");
+Line 15 conatins 1 tokens: 
+ System.exit(1);
+Line 16 conatins 1 tokens: 
+ }
+Line 17 conatins 3 tokens: 
+ //
+ open
+ files
+Line 18 conatins 5 tokens: 
+ in
+ =
+ new
+ Scanner(new
+ File(args[0]));
+Line 19 conatins 5 tokens: 
+ out
+ =
+ new
+ PrintWriter(new
+ FileWriter(args[1]));
+Line 20 conatins 12 tokens: 
+ //
+ read
+ lines
+ from
+ in,
+ extract
+ adn
+ print
+ tokens
+ from
+ each
+ line
+Line 21 conatins 4 tokens: 
+ while(
+ in.
+ hasNextLine()
+ ){
+Line 22 conatins 1 tokens: 
+ lineNumber++;
+Line 23 conatins 6 tokens: 
+ //
+ trim
+ leading
+ and
+ trailing
+ spaces,
+Line 24 conatins 6 tokens: 
+ //then
+ add
+ one
+ trailing
+ space
+ so
+Line 25 conatins 6 tokens: 
+ //
+ split
+ works
+ on
+ blank
+ lines
+Line 26 conatins 6 tokens: 
+ line
+ =
+ in.nextLine().trim()
+ +
+ "
+ ";
+Line 27 conatins 6 tokens: 
+ //
+ split
+ line
+ around
+ white
+ space
+Line 28 conatins 3 tokens: 
+ token
+ =
+ line.split("\\s+");
+Line 29 conatins 4 tokens: 
+ //
+ print
+ out
+ tokens
+Line 30 conatins 3 tokens: 
+ n
+ =
+ token.length;
+Line 31 conatins 14 tokens: 
+ out.println("Line
+ "
+ +
+ lineNumber
+ +
+ "
+ conatins
+ "
+ +
+ n
+ +
+ "
+ tokens:
+ ");
+Line 32 conatins 3 tokens: 
+ for(i=0;
+ i<n;
+ i++){
+Line 33 conatins 3 tokens: 
+ out.println("
+ "
+ +token[i]);
+Line 34 conatins 1 tokens: 
+ }
+Line 35 conatins 1 tokens: 
+ }
+Line 36 conatins 3 tokens: 
+ //
+ close
+ files
+Line 37 conatins 1 tokens: 
+ in.close();
+Line 38 conatins 1 tokens: 
+ out.close();
+Line 39 conatins 1 tokens: 
+ }
+Line 40 conatins 1 tokens: 
+ }
